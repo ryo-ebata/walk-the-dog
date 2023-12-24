@@ -2,16 +2,6 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
 use rand::prelude::*;
 
-
-// When the `wee_alloc` feature is enabled, this uses `wee_alloc` as the global
-// allocator.
-//
-// If you don't want to use `wee_alloc`, you can safely delete this.
-#[cfg(feature = "wee_alloc")]
-#[global_allocator]
-static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
-
-
 // This is like the `main` function, except for JavaScript.
 #[wasm_bindgen(start)]
 pub fn main_js() -> Result<(), JsValue> {
@@ -36,7 +26,7 @@ pub fn main_js() -> Result<(), JsValue> {
         &context, 
         [(300.0, 0.0), (0.0, 600.0), (600.0, 600.0)], 
         (0, 255, 0),
-        5
+        3
     );
 
     Ok(())
